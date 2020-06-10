@@ -10,7 +10,7 @@ I allotted 4 hours to work on this project. I made a good bit of progress, but u
 What was done:
 * Built an interface to allow client-code to create a new machine. 
 * Added a Pass and Task state.
-* Added compile functionality to the macine and each of it's states.
+* Added compile functionality to the machine and each of it's states.
 * Added the ability to set state transitions.
 * Added type information and unit tests.
 
