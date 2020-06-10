@@ -4,3 +4,8 @@ declare interface Machine {
     TimeoutSeconds?: number;
     States: { [name: string]: object }
 }
+
+declare interface MachineState {
+    Type: string;
+    End?: boolean;
+}

@@ -15,7 +15,7 @@ export default class ASLMachine {
      * Returns the timeout provided for this machine, or undefined if one was not provided.
      */
     public get timeout(): Maybe<number> {
-        return this._timeout || undefined;
+        return Number(this._timeout) > 0 ? this._timeout : undefined;
     }
     private _timeout: Maybe<number>;
     // #endregion
@@ -49,19 +49,25 @@ export default class ASLMachine {
      * Compiles this state machine and returns it as a JSON string.
      */
     public compile(): string {
+        // Grab first state, add end marker to it.
         const startState = this.states[0];
+        const startStateComp = startState.compile();
+        startStateComp.End = true;
+        // Create JSON object for machine.
         const machineJson: Machine = {
             StartAt: startState.name,
             States: {
-                [startState.name]: startState.compile()
+                [startState.name]: startStateComp
             }
         };
+        // Add optional fields.
         if (this.comment) {
             machineJson.Comment = this.comment;
         }
         if (this.timeout) {
             machineJson.TimeoutSeconds = this.timeout;
         }
+        // Stringify and return.
         return JSON.stringify(machineJson);
     }
 }

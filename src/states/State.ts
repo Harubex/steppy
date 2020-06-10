@@ -29,9 +29,9 @@ export default abstract class State {
     }
 
     /**
-     * Compiles this state and returns it as a JSON string.
+     * Compiles this state and returns it as a JSON-encodable object.
      */
-    public compile(): object {
+    public compile(): MachineState {
         return {
             Type: this.type
         };
