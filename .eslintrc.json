@@ -1,0 +1,85 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "root": true,
+    "rules": {
+        "comma-dangle": "error",
+        "curly": [
+            "error",
+            "all"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 100,
+                "comments": 120,
+                "tabWidth": 4
+            }
+        ],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "indent": [
+            "error",
+            4
+        ],
+        "sort-imports": "off",
+        "newline-before-return": "error",
+        "arrow-parens": [
+            "error",
+            "always"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "key-spacing": [
+            "error",
+            {
+                "afterColon": true,
+                "beforeColon": false,
+                "mode": "strict"
+            }
+        ],
+        "array-bracket-newline": "error",
+        "array-bracket-spacing": "error",
+        "array-element-newline": [
+            "error",
+            "consistent"
+        ],
+        "prefer-template": "error",
+        "no-bitwise": "error",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "args": "after-used"
+            }
+        ],
+        "@typescript-eslint/array-type": [
+            "error"
+        ],
+        "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/no-non-null-assertion": "off"
+    }
+}
