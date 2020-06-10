@@ -18,23 +18,39 @@ export default abstract class State {
     }
     private _type: StateType;
 
+    public next: Maybe<string>;
+
+    public end: boolean = false;
+
     /**
      * Abstract ctor - sets the common fields for a state.
      * @param name The name of this state.
      * @param type The type of this state.
+     * @param next An optional state name to transition to.
      */
-    protected constructor(name: string, type: StateType) {
+    protected constructor(name: string, type: StateType, next?: string) {
         this._name = name;
         this._type = type;
+        this.next = next;
     }
 
     /**
      * Compiles this state and returns it as a JSON-encodable object.
      */
     protected compileCommon(): MachineState {
-        return {
+        const json: MachineState = {
             Type: this.type
         };
+
+        if (this.next) {
+            json.Next = this.next;
+        }
+
+        if (this.end) {
+            json.End = true;
+        }
+
+        return json;
     }
 
     /**
