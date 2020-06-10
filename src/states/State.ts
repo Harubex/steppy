@@ -31,9 +31,9 @@ export default abstract class State {
     /**
      * Compiles this state and returns it as a JSON string.
      */
-    public compile(): string {
-        return JSON.stringify({
+    public compile(): object {
+        return {
             Type: this.type
-        });
+        };
     }
 }

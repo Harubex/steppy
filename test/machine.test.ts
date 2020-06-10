@@ -9,5 +9,6 @@ describe("State machine tests", () => {
         const machine = new ASLMachine(passState);
         const json = machine.compile();
         expect(json).to.exist;
+        console.log(json);
     });
 });
