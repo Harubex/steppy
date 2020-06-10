@@ -10,7 +10,7 @@
         "lint": "eslint \"src/**\"",
         "lint-fix": "npm run lint -- --fix",
         "start": "node ./src/app.js",
-        "test": "mocha"
+        "test": "cross-env TS_NODE_PROJECT=test/tsconfig.test.json mocha -r ts-node/register test/**/*.ts"
     },
     "author": "Hannah Coyle",
     "license": "WTFPL",
@@ -19,6 +19,8 @@
         "typescript": "3.9.5"
     },
     "devDependencies": {
+        "@types/chai": "^4.2.11",
+        "@types/mocha": "^7.0.2",
         "@typescript-eslint/eslint-plugin": "^3.1.0",
         "@typescript-eslint/parser": "^3.1.0",
         "chai": "^4.2.0",

@@ -13,7 +13,6 @@
         "emitBOM": true,
         "noEmitHelpers": false,
         "noImplicitAny": false,
-        "jsx": "react",
         "module": "commonjs",
         "importHelpers": false,
         "incremental": true,
@@ -40,6 +39,7 @@
         ]
     },
     "include": [
-        "./src/**/*.ts"
+        "./src/**/*.ts",
+        "./typings/*.d.ts"
     ]
 }
