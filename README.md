@@ -4,6 +4,7 @@ This project uses yarn for package management. Run the following command to inst
 yarn
 ```
 
+## Description
 I allotted 4 hours to work on this project. I made a good bit of progress, but unfortunately it wasn't enough to complete every requirement laid out in the project document.
 
 What was done:
