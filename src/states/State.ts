@@ -23,7 +23,7 @@ export default abstract class State {
      * @param name The name of this state.
      * @param type The type of this state.
      */
-    constructor(name: string, type: StateType) {
+    protected constructor(name: string, type: StateType) {
         this._name = name;
         this._type = type;
     }
@@ -31,9 +31,14 @@ export default abstract class State {
     /**
      * Compiles this state and returns it as a JSON-encodable object.
      */
-    public compile(): MachineState {
+    protected compileCommon(): MachineState {
         return {
             Type: this.type
         };
     }
+
+    /**
+     * A function to be instantiated by all substates - return fields to merge with common values.
+     */
+    public abstract compile(): MachineState;
 }
